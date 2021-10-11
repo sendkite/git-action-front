@@ -1,3 +1,6 @@
+http://pythonapp-env.eba-mjj7umfd.ap-northeast-2.elasticbeanstalk.com
+https://d3e78wdm5di0r8.cloudfront.net
+
 <!Doctype html>
 <html lang="ko">
 
@@ -48,7 +51,7 @@
         }
     </style>
     <script>
-        $(document).ready(function () {
+        $(document).ready(function(){
             getCount();
             getFiles();
         })
@@ -73,18 +76,18 @@
                 type: 'GET',
                 url: 'http://pythonapp-env.eba-mjj7umfd.ap-northeast-2.elasticbeanstalk.com/files',
                 success: function (data) {
-                    for (let i = 0; i < data['files'].length; i++) {
+                    for(let i = 0 ; i < data['files'].length ; i++){
                         makeCard(data['files'][i]);
                     }
                 },
             });
         }
 
-        function makeCard(data) {
+        function makeCard(data){
             let card = ` <div class="card">
                                 <div>
                                     <img class="card-img-top"
-                                         src="https://d3e78wdm5di0r8.cloudfront.net/${data}"
+                                         src="http://d3e78wdm5di0r8.cloudfront.net/${data}"
                                          alt="Card image cap">
                                     <p class="card-text comment">${data}</p>
                                 </div>
@@ -124,7 +127,7 @@
         </div>
     </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">총 파일갯수:<span id="count"></span></a>
+    <a class="navbar-brand" href="#">총 파일갯수:<span id="count"></span></a>
     </nav>
     <div id="cards-box" class="card-columns">
     </div>
